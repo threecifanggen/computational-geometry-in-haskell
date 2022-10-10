@@ -1,16 +1,8 @@
 module Graph2D (
     Point2D,
-    LineSeq2D
+    Shape2D (..)
 ) where
 
-data Point2D = Point2D {
-    x:: Float
-    y:: Float
-}
+type Point2D = (Float, Float)
 
-data LineSeq2D = LineSeq2D {
-    startPoint:: Point2D
-    endPoint:: Point2D
-}
-
-
+data Shape2D = Circle2D Point2D Float | LineSeq2D Point2D Point2D deriving (Read, Show, Eq)
